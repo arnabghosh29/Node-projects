@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="/static/css/style.css">
+    <title>Dynamic Website</title>
+    
+  </head>
+  <body>
+   {{>navbar data=details}} 
+   
+   {{> slider slides=sliders}}
+
+
+{{!-- banner1section --}}
+
+<section class="banner1_section background2 py-5">
+  <div class="container text-center">
+    <div class="row">
+<div class="col-md-12">
+  <h1>Start learning new technology here !!</h1>
+  <p>Lorem ipsum dolor,sit amet consectrtur elit</p>
+  <button class="btn btn-outline-primary">Start lerning</button>
+</div>
+    </div>
+  </div>
+</section>
+
+{{!-- services sectiom --}}
+
+<section id="services-section" class="py-4">
+
+<div class="container">
+ <h1 class="text-center text-primary">service that we provide</h1>
+  <div class="row mt-5">
+    {{!-- fast service col --}}
+    {{#each services}}
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+         <div class="container py-3">
+           <i class="{{this.icon}} service_icon "></i>
+         </div> 
+        
+          <h5 class="card-title">{{this.title}} </h5>
+          <p>{{this.description}} </p>
+          <a href=" {{this.link}}">{{this.linkText}} </a>
+          <a href="#!" class="ml-3">Support</a>
+        </div>
+
+      </div>
+
+
+    </div>
+    {{/each}}
+
+</div>
+ 
+  </div>
+</section>
+
+{{!-- banner2 section --}}
+
+<section class="banner2_section py-5">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 text-center pt-3">
+      {{!-- letf side --}}
+      <h3>We work for people,not for mony</h3>
+      <p>Lorem ipsum dolor sit,amet consectetur adipisicind elit.</p>
+      <button class="btn btn-primary">Click Here</button>
+    </div>
+    <div class="col-md-6 text-center py-3">
+      {{!-- image text --}}
+      <img src="/static/images/pic5.png" style=" height: 300px;">
+    </div>
+
+  </div>
+</div>
+</section>
+
+{{!-- banner3 section --}}
+
+<section class="banner2_section py-5">
+<div class="container">
+  <div class="row">
+     <div class="col-md-6 text-center py-3">
+      {{!-- image text --}}
+      <img src="/static/images/pic4.png" style=" height: 300px;">
+    </div>
+    <div class="col-md-6 text-center pt-3">
+      {{!-- letf side --}}
+      <h3>We work for people,not for mony</h3>
+      <p>Lorem ipsum dolor sit,amet consectetur adipisicind elit.</p>
+      <button class="btn btn-primary">Click Here</button>
+    </div>
+   
+
+  </div>
+</div>
+</section>
+
+{{!-- contact us section --}}
+
+
+<section id="contact_us_section" class="py-5 background1">
+  <div class="container">
+    <h3 class="text-center text-muted">Contact us</h3>
+    <div class="row">
+      <div class="col-md-12">
+
+ 
+       <form action="/process-contact-form" method="post">
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Your email address</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+
+            <div class="mb-3">
+            <label for="contactNumberField" class="form-label">Your contact number</label>
+             <input name="phone" type="number" class="form-control" id="contactNumberField">
+      </div>
+           
+        <div class="form-floating my-2">
+        <textarea name="query" style="height: 150px;" class="form-control" placeholder="Enter your query here" id="queryField"></textarea>
+        <label for="queryField">Your query</label>
+        </div>
+          <div class="container text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+  </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{{!-- about section --}}
+
+<section id="about-section "class="about-section py-5">
+  <div class="container text-center">
+    <div class="row">
+    <div class="col-md-12">
+      <h3>About this side</h3>
+      <p> 
+       
+       When someone visits your website and knows nothing about you or your business, where do you think they go? Possibly the About Us Page, this is one of the most important pages on your website. If you are looking for an easy and quick way to create an About Us Page then this blog is written for you.
+        
+        </p>
+        <button class="btn btn-success">
+
+          Contact us
+        </button>
+      
+      
+    </div>
+  </div>
+  </div>
+</section>
+
+<footer class="footer background3 text-center py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        @2023 Copyright:<span>Lern Code with arnab</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+  {{!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button> 
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button> --}}
+{{!-- </div> --}}
+{{!-- {{details}} --}}
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
